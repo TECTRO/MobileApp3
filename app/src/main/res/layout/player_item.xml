@@ -50,6 +50,23 @@
                    android:layout_height="wrap_content"
                    android:text="435"/>
            </LinearLayout>
+
+           <LinearLayout
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:orientation="horizontal">
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Счет: "/>
+
+               <TextView
+                   android:id="@+id/player_collected_score_view"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="435"/>
+           </LinearLayout>
        </LinearLayout>
 
        <Button

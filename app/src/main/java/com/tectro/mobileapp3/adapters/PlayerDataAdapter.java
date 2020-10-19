@@ -20,13 +20,14 @@ import java.util.function.Consumer;
 public class PlayerDataAdapter extends RecyclerView.Adapter<PlayerDataAdapter.ViewHolder> {
     private LayoutInflater inflater;
     private List<Player> players;
-    private  Consumer<Player> callable;
+    private Consumer<Player> callable;
 
     public PlayerDataAdapter(Context context, List<Player> players, Consumer<Player> callable) {
         this.players = players;
         this.inflater = LayoutInflater.from(context);
         this.callable = callable;
     }
+
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -38,11 +39,13 @@ public class PlayerDataAdapter extends RecyclerView.Adapter<PlayerDataAdapter.Vi
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Player player = players.get(position);
-        holder.PlayerIndex.setText(String.valueOf(position+1));
+        holder.PlayerIndex.setText(String.valueOf(position + 1));
+        holder.PlayerHoldenScore.setText(String.valueOf(player.getScore()));
         try {
-            holder.PlayerAddNumbersBtn.setOnClickListener(r->callable.accept(player));
             holder.PlayerScore.setText(String.valueOf(player.getNumbers().stream().map(Number::getValue).mapToInt(Integer::intValue).sum()));
-        }catch (Exception ignored){}
+            holder.PlayerAddNumbersBtn.setOnClickListener(r -> callable.accept(player));
+        } catch (Exception ignored) {
+        }
     }
 
     @Override
@@ -51,12 +54,14 @@ public class PlayerDataAdapter extends RecyclerView.Adapter<PlayerDataAdapter.Vi
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        final TextView PlayerIndex, PlayerScore;
+        final TextView PlayerIndex, PlayerScore, PlayerHoldenScore;
         final Button PlayerAddNumbersBtn;
+
         ViewHolder(View view) {
             super(view);
             PlayerIndex = view.findViewById(R.id.player_index_info_view);
             PlayerScore = view.findViewById(R.id.player_expected_score_view);
+            PlayerHoldenScore = view.findViewById(R.id.player_collected_score_view);
             PlayerAddNumbersBtn = view.findViewById(R.id.player_select_numbers_btn);
         }
     }

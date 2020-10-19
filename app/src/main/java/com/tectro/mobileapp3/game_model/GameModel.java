@@ -102,7 +102,7 @@ public class GameModel {
             for (Player eqw : Players) {
                 if (cur != eqw) {
                     for (Number cur_num : cur.getNumbers()) {
-                        for (Number eqw_num : cur.getNumbers()) {
+                        for (Number eqw_num : eqw.getNumbers()) {
                             if (cur_num == eqw_num) {
                                 hasRepetitions = true;
                                 break;
@@ -116,6 +116,9 @@ public class GameModel {
 
             cur.CollectScore(hasRepetitions);
         }
+
+        for (Player cur : Players)
+            cur.getNumbers().clear();
 
         if (CurrentRound == TotalRounds)
             gameFinished = true;
