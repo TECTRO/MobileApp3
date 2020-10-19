@@ -33,12 +33,15 @@ public class ActiveRoundActivity extends AppCompatActivity {
 
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.RoundRecyclerView);
 
-        recyclerView.setLayoutManager(new LinearLayoutManager(this) {
+        recyclerView.setLayoutManager(new LinearLayoutManager(this) );
+        /*
+        {
             @Override
             public boolean canScrollVertically() {
                 return false;
             }
-        });
+        }
+        * */
         adapter = new PlayerDataAdapter(this, model.getPlayers(), this::SelectNumbers);
         recyclerView.setAdapter(adapter);
 
@@ -83,6 +86,9 @@ public class ActiveRoundActivity extends AppCompatActivity {
         model.EndRound();
         Intent Game = new Intent(this, ActiveRoundActivity.class);
        //Game.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-        recreate();
+        startActivity(Game);
+        finish();
+
+        //recreate();
     }
 }
