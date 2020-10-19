@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.MainMenuActivity"
+    android:gravity="center"
+    android:orientation="vertical"
+    >
+
+    <Button
+        android:layout_width="221dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="@string/two"
+        android:id="@+id/MainMenu_btn1"
+        android:onClick="startGame"
+        />
+    <Button
+        android:layout_width="221dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="@string/three"
+        android:id="@+id/MainMenu_btn2"
+        android:onClick="startGame"
+        />
+    <Button
+        android:layout_width="221dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="@string/four"
+        android:id="@+id/MainMenu_btn3"
+        android:onClick="startGame"
+        />
+    <Button
+        android:layout_width="221dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="@string/five"
+        android:id="@+id/MainMenu_btn4"
+        android:onClick="startGame"
+        />
+    <Button
+        android:layout_width="221dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="@string/six"
+        android:id="@+id/MainMenu_btn5"
+        android:onClick="startGame"
+        />
+
+</LinearLayout>

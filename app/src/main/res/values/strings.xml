@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">MobileApp3</string>
+
+
+    <string name="two">2 игрока</string>
+    <string name="three">3 игрока</string>
+    <string name="four">4 игрока</string>
+    <string name="five">5 игроков</string>
+    <string name="six">6 игроков</string>
+</resources>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:baselineAligned="false"
+    android:orientation="vertical"
+    android:padding="20dp"
+    tools:context=".activities.ActiveRoundActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Раунд "
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/RoundNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4118631"
+            android:textSize="18sp" />
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:background="@drawable/bottom_line" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="Доступные числа:"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/all_Numbers_PreView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:paddingTop="0dp"
+        android:text="1 2 3 4 5 6 7"
+        android:textSize="16sp" />
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="50dp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/RoundRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/NextRoundBtn"
+            android:padding="10dp" />
+
+        <Button
+            android:id="@+id/NextRoundBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="10dp"
+            android:theme="@style/PurpleButton"
+            android:onClick="NextRound"
+            android:text="Следующий раунд" />
+
+    </RelativeLayout>
+</LinearLayout>
+
